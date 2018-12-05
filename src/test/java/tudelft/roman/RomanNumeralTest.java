@@ -1,36 +1,46 @@
 package tudelft.roman;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class RomanNumeralTest {
 
 
+    /**
+     * TODO: Can we refactor these methods to one,
+     * testing values and correct results from a set?
+     */
+
+    private RomanNumeral roman;
+
+    @BeforeEach
+    public void initialize() {
+        roman = new RomanNumeral();
+    }
+
     @Test
     public void singleNumber() {
-        RomanNumeral roman = new RomanNumeral();
         int result = roman.convert("I");
-        Assertions.assertEquals(1, result);
+        assertEquals(1, result);
     }
 
     @Test
     public void numberWithManyDigits() {
-        RomanNumeral roman = new RomanNumeral();
         int result = roman.convert("VIII");
-        Assertions.assertEquals(8, result);
+        assertEquals(8, result);
     }
 
     @Test
     public void numberWithSubtractiveNotation() {
-        RomanNumeral roman = new RomanNumeral();
         int result = roman.convert("IV");
-        Assertions.assertEquals(4, result);
+        assertEquals(4, result);
     }
 
     @Test
     public void numberWithAndWithoutSubtractiveNotation() {
-        RomanNumeral roman = new RomanNumeral();
         int result = roman.convert("XLIV");
-        Assertions.assertEquals(44, result);
+        assertEquals(44, result);
     }
 }
