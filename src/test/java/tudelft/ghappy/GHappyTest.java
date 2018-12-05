@@ -1,6 +1,7 @@
 package tudelft.ghappy;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -21,8 +22,13 @@ public class GHappyTest {
     })
     public void testAlgorithm(String str, boolean expectedResult) {
         boolean result = new GHappy().gHappy(str);
-        Assertions.assertEquals(expectedResult, result);
+        assertEquals(expectedResult, result);
     }
 
-    // TODO: str is null
+    @Test
+    public void stringIsNull() {
+        assertThrows(NullPointerException.class, () -> {
+            boolean result = new GHappy().gHappy(null);
+        });
+    }
 }
