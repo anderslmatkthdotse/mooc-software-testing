@@ -3,6 +3,11 @@ package tudelft.leapyear;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/*
+    TODO: Interesting start, for students, is to only implement test cases returning true, and then
+    write the function to return true (always).
+ */
+
 public class LeapYearTest {
     @Test
     public void leapYearsThatAreNonCenturialYears() {
